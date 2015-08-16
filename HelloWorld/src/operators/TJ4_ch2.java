@@ -107,6 +107,19 @@ public class TJ4_ch2 {
 		 * Take these two values and combine them in all possible ways using the bitwise operators, 
 		 * and display the results using Integer.toBinaryString( ).
 		 */
+		System.out.println("Ex10_________________");
+		int i10 = 052525252;
+		int i11 = 025252525;
+		System.out.println("i10 in numerical: " + i10 + ", in binary: " + Integer.toBinaryString(i10));
+		System.out.println("i10 in numerical: " + i11 + ", in binary: " + Integer.toBinaryString(i11));
+		System.out.println("using bitwise and operator: " + Integer.toBinaryString(i10&i11) + ", in numerical: " + (i10&i11));
+		System.out.println("using bitwise or operator: " + Integer.toBinaryString(i10|i11) + ", in numerical: " + (i10|i11));
+		System.out.println("using bitwise xor operator: " + Integer.toBinaryString(i10^i11) + ", in numerical: " + (i10^i11));
+		System.out.println("using bitwise not operator at i10: " + Integer.toBinaryString(~i10)  + ", in numerical: " + (~i10));
+		System.out.println("using bitwise not operator at i11: " + Integer.toBinaryString(~i11) + ", in numerical: " + (~i11));
+		
+		
+		
 		
 	}
 
