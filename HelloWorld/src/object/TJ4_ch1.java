@@ -1,3 +1,4 @@
+
 package object;
 
 // First chapter - everything is an object
@@ -58,13 +59,13 @@ public class TJ4_ch1 {
 	 * a code fragment in this chapter.
 	 */
 	String s = "Exercise #6 in action";
-	System.out.println("Ex5_________________");
+	System.out.println("Ex6_________________");
 	System.out.println(storage(s));
 	System.out.println();
 	
 	/* Exercise #7 - (1) Turn the Incrementable code fragments into a working program.
 	 */
-	System.out.println("Ex6_________________");
+	System.out.println("Ex7_________________");
 	System.out.println("Variable value before incrementing: " + Ex7_StaticTest.i);
 	Ex7_Incrementable.increment();
 	System.out.println("Variable value after incrementing: " + Ex7_StaticTest.i);
@@ -74,18 +75,18 @@ public class TJ4_ch1 {
 	 */
 	Ex7_StaticTest st1 = new Ex7_StaticTest();
 	Ex7_StaticTest st2 = new Ex7_StaticTest();
-	System.out.println("Ex7_________________");
-	System.out.println("Ex7_StaticTest static variable i value is equal: " + Ex7_StaticTest.i);
+	System.out.println("Ex8_________________");
+	System.out.println("Ex8_StaticTest static variable i value is equal: " + Ex7_StaticTest.i);
 	System.out.println("st1 static variable i value is equal: " + st1.i);
 	System.out.println("st2_StaticTest static variable i value is equal: " + st2.i);
 	System.out.println("change value of static variable i of st1");
 	st1.i += 10;
-	System.out.println("Ex7_StaticTest static variable i value is equal: " + Ex7_StaticTest.i);
+	System.out.println("Ex8_StaticTest static variable i value is equal: " + Ex7_StaticTest.i);
 	System.out.println("st1 static variable i value is equal: " + st1.i);
 	System.out.println("st2_StaticTest static variable i value is equal: " + st2.i);
 	Ex7_StaticTest.i += 10;
 	System.out.println("change value of static variable i of Ex7_StaticTest");
-	System.out.println("Ex7_StaticTest static variable i value is equal: " + Ex7_StaticTest.i);
+	System.out.println("Ex8_StaticTest static variable i value is equal: " + Ex7_StaticTest.i);
 	System.out.println("st1 static variable i value is equal: " + st1.i);
 	System.out.println("st2_StaticTest static variable i value is equal: " + st2.i);
 	

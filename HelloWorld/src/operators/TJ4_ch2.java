@@ -1,3 +1,4 @@
+
 package operators;
 
 import java.util.Random;
@@ -107,6 +108,66 @@ public class TJ4_ch2 {
 		 * Take these two values and combine them in all possible ways using the bitwise operators, 
 		 * and display the results using Integer.toBinaryString( ).
 		 */
+		System.out.println("Ex10_________________");
+		int i10 = 052525252;
+		int i11 = 025252525;
+		System.out.println("i10 in numerical: " + i10 + ", in binary: " + Integer.toBinaryString(i10));
+		System.out.println("i10 in numerical: " + i11 + ", in binary: " + Integer.toBinaryString(i11));
+		System.out.println("using bitwise and operator: " + Integer.toBinaryString(i10&i11) + ", in numerical: " + (i10&i11));
+		System.out.println("using bitwise or operator: " + Integer.toBinaryString(i10|i11) + ", in numerical: " + (i10|i11));
+		System.out.println("using bitwise xor operator: " + Integer.toBinaryString(i10^i11) + ", in numerical: " + (i10^i11));
+		System.out.println("using bitwise not operator at i10: " + Integer.toBinaryString(~i10)  + ", in numerical: " + (~i10));
+		System.out.println("using bitwise not operator at i11: " + Integer.toBinaryString(~i11) + ", in numerical: " + (~i11));
+		
+		/* Exercise #11 - (3) Start with a number that has a binary one in the most significant position
+		 *  (hint: Use a hexadecimal constant). Using the signed right-shift operator, right shift it all the way through all 
+		 *  of its binary positions, each time displaying the result using Integer.toBinaryString( ).
+		 */
+		System.out.println("Ex11_________________");
+		int i13 = 020000000000;
+		System.out.println("starting value: " + Integer.toBinaryString(i13) + " " + i13);
+		for (int i=1; i<32;i++) {
+			i13 >>= 1;
+			System.out.println("perfoming a signed right shift by 1 ... " + Integer.toBinaryString(i13) + " " +i13);
+		}
+		
+		/* Exercise #12 - (3) Start with a number that is all binary ones. Left shift it, then use the unsigned
+		 *  right-shift operator to right shift through all of its binary positions, each time displaying 
+		 *  the result using Integer.toBinaryString( ).
+		 */
+		System.out.println("Ex12_________________");
+		int i14 = -1;
+		System.out.println("starting value: " + Integer.toBinaryString(i14) + " " + i14);
+		i14 <<= 10;
+		System.out.println("after left shifting by 30 positions: " + Integer.toBinaryString(i14) + " " + i14);
+		for (int i=1; i<32;i++) {
+			i14 >>>= 1;
+			System.out.println("perfoming an unsigned right shift by 1 ... " + Integer.toBinaryString(i14) + " " +i14);
+		}
+		
+		/* Exercise #13 - (1) Write a method that displays char values in binary form. 
+		 * Demonstrate it using several different characters.
+		 */
+		System.out.println("Ex13_________________");
+		char ch1 ='m';
+		char ch2 = 'a';
+		char ch3 = 's';
+		char ch4 = 'h'; 
+		System.out.println("char value " + ch1 + " in binary form: " + Integer.toBinaryString(ch1) +" "+ (int)ch1);
+		System.out.println("char value " + ch2 + " in binary form: " + Integer.toBinaryString(ch2) +" "+ (int)ch2);
+		System.out.println("char value " + ch3 + " in binary form: " + Integer.toBinaryString(ch3) +" "+ (int)ch3);
+		System.out.println("char value " + ch4 + " in binary form: " + Integer.toBinaryString(ch4) +" "+ (int)ch4);
+	
+		/* Exercise #14 (3) Write a method that takes two String arguments and uses all the boolean comparisons 
+		 * to compare the two Strings and print the results. For the == and !=, also perform the equals( ) test.
+		 *  In main( ), call your method with some different String objects.
+		 */
+		System.out.println("Ex14_________________");
+		String str1 = "nil";
+		String str2 = "one";
+		String str3 = "one";
+		Ex2_14.strCompare(str1, str2);
+		Ex2_14.strCompare(str2, str3);
 		
 	}
 
