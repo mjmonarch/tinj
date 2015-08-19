@@ -72,26 +72,23 @@ public class TJ4_ch3 {
 		 * and a bitwise test to display the ones and zeroes, instead of Integer.toBinaryString( ).
 		 */
 		System.out.println("Ex5_________________");
-		/* Exercise #10 - (3) Write a program with two constant values, one with alternating binary ones and zeroes, 
-		 * with a zero in the least-significant digit, and the second, also alternating, 
-		 * with a one in the least-significant digit (hint: It’s easiest to use hexadecimal constants for this). 
-		 * Take these two values and combine them in all possible ways using the bitwise operators, 
-		 * and display the results using Integer.toBinaryString( ).
-		 */
 		int i10 = 052525252;
 		int i11 = 025252525;
 		System.out.println("i10 in numerical: " + i10 + ", in binary: " + Integer.toBinaryString(i10));
-		System.out.println("i10 in numerical: " + i10 + ", in binary: " + Ex3_5.printBinary(i10));
+		System.out.println("i10 in numerical: " + i10 + ", in binary: " + Ex3_5_1.printBinary(i10));
 		System.out.println("i11 in numerical: " + i11 + ", in binary: " + Integer.toBinaryString(i11));
-		System.out.println("i10 in numerical: " + i11 + ", in binary: " + Ex3_5.printBinary(i11));
-		//System.out.println("using bitwise and operator: " + Integer.toBinaryString(i10&i11) + ", in numerical: " + (i10&i11));
-		//System.out.println("using bitwise or operator: " + Integer.toBinaryString(i10|i11) + ", in numerical: " + (i10|i11));
-		//System.out.println("using bitwise xor operator: " + Integer.toBinaryString(i10^i11) + ", in numerical: " + (i10^i11));
-		//System.out.println("using bitwise not operator at i10: " + Integer.toBinaryString(~i10)  + ", in numerical: " + (~i10));
-		//System.out.println("using bitwise not operator at i11: " + Integer.toBinaryString(~i11) + ", in numerical: " + (~i11));
-		//System.out.println(i10 + " " + ~i10);
-		//System.out.println(i11 + " " + ~i11);
-		System.out.println("one" + "two");
+		System.out.println("i10 in numerical: " + i11 + ", in binary: " + Ex3_5_1.printBinary(i11));
+
+		//test for correctness of static procedure printBinary
+		label2:
+		for (int i=1; i<100; i++) {
+			int r = rand.nextInt();
+			if (Integer.toBinaryString(r).equals(Ex3_5_1.printBinary(r)) != true) {
+				System.out.println("test failed");
+				break label2;
+			}
+		}
+		
 	}
 
 }

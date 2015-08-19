@@ -2,6 +2,8 @@ package controllingExecution;
 
 public class Ex3_5 {
 
+	// incorrect version, because result string is needed to be 'turned reverse'
+	
 	public static String printBinary (int value) {
 		String result = "";
 		int value1 = value;
