@@ -119,6 +119,7 @@ public class TJ4_ch2 {
 		System.out.println("using bitwise not operator at i10: " + Integer.toBinaryString(~i10)  + ", in numerical: " + (~i10));
 		System.out.println("using bitwise not operator at i11: " + Integer.toBinaryString(~i11) + ", in numerical: " + (~i11));
 		
+<<<<<<< HEAD
 		/* Exercise #11 - (3) Start with a number that has a binary one in the most significant position
 		 *  (hint: Use a hexadecimal constant). Using the signed right-shift operator, right shift it all the way through all 
 		 *  of its binary positions, each time displaying the result using Integer.toBinaryString( ).
@@ -168,6 +169,10 @@ public class TJ4_ch2 {
 		String str3 = "one";
 		Ex2_14.strCompare(str1, str2);
 		Ex2_14.strCompare(str2, str3);
+=======
+		
+		
+>>>>>>> origin/master
 		
 	}
 
