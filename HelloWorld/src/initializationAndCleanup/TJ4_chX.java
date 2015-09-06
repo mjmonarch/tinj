@@ -1,8 +1,33 @@
 package initializationAndCleanup;
 
+import java.lang.management.GarbageCollectorMXBean;
+import java.util.Random;
+
+import javax.crypto.spec.GCMParameterSpec;
+
 public class TJ4_chX {
 
-	public static void main(String[] args) {
+	enum currency {USD, UAH, RUB, JPY, GBP, EUR};
+		
+	static void varargMethod (String... str1){
+		for (String s: str1) {
+			System.out.println(s);
+		}
+	}
+	
+	static void enumPrint (currency cur2) {
+		switch (cur2) {
+		case USD: System.out.print("dollar USA"); break;
+		case RUB: System.out.print("rubl Russia"); break;
+		case JPY: System.out.print("yena Japan");  break;
+		case GBP: System.out.print("pound Great Britain"); break;
+		case EUR: System.out.print("euro European Union"); break;
+		default: System.out.print("hrivna Ukraine");
+		}
+		
+	}
+	
+	public static void main(String[] args) throws InterruptedException {
 		
 	/* Exercise #1 - (1) Create a class containing an uninitialized String reference. 
 	 * Demonstrate that this reference is initialized by Java to null.
@@ -75,7 +100,101 @@ public class TJ4_chX {
 	System.out.println("Ex8_________________");
 	new Ex8_testClass().method2();
 	
+	/*Exercise #9 - (1) Create a class with two (overloaded) constructors. Using this, call the second constructor inside the first one. */
+	System.out.println("Ex9_________________");
+	new Ex9_testClass();
 	
-
+	/*Exercise #10 - (2) Create a class with a finalize( ) method that prints a message. In main( ), create an object of your class.
+	 *  Explain the behavior of your program.
+	 */
+	System.out.println("Ex10_________________");
+	new Ex10_finalize();
+		
+	/*Exercise #11 - (4) Modify the previous exercise so that your finalize( ) will always be called. */
+	System.out.println("Ex11_________________");
+	System.gc();
+	Thread.sleep(100);
+	                   
+	/*Exercise #12 - (4) Create a class called Tank that can be filled and emptied, and has a termination condition that it must be empty 
+	 * when the object is cleaned up. Write a finalize( ) that verifies this termination condition. In main( ), test the possible 
+	 * scenarios that can occur when your Tank is used.
+	 */
+	System.out.println("Ex12_________________");
+	Ex12_tank tank1 = new Ex12_tank(0);
+	Ex12_tank tank2 = new Ex12_tank(5);
+	new Ex12_tank(4); // tank with default state
+	tank1.fill();
+	tank1.empty();
+	tank2.fill();
+	//forget to empty anonymous tank
+	System.gc();
+	Thread.sleep(100);
+	
+	/*Exercise #14 - (1) Create a class with a static String field that is initialized at the point of definition, and another one
+	 *  that is initialized by the static block. Add a static method that prints both fields and demonstrates that they are both initialized
+	 *   before they are used.
+	 */
+	System.out.println("Ex14_________________");
+	Ex14_static ex14 = new Ex14_static();
+	ex14.printStrings();
+	
+	/*Exercise #15 - (1) Create a class with a String that is initialized using instance initialization. */
+	System.out.println("Ex15_________________");
+	Ex15_instanceInitialization ex15 = new Ex15_instanceInitialization("33");
+	ex15.print();
+	
+	/*Exercise #16 - (1) Create an array of String objects and assign a String to each element. Print the array by using a for loop.*/
+	System.out.println("Ex16_________________");
+	String[] strArray = new String[new Random().nextInt(10)];
+	for (int i1 = 0; i1<strArray.length; i1++) {
+		strArray[i1] = "string #" + i1;
+	}
+	for (String s1 : strArray) {
+		System.out.println(s1);
+	}
+	
+	/*Exercise #17 - (2) Create a class with a constructor that takes a String argument. During construction, print the argument. 
+	 * Create an array of object references to this class, but don’t actually create objects to assign into the array.
+	 *  When you run the program, notice whether the initialization messages from the constructor calls are printed.
+	 */
+	System.out.println("Ex17_________________");
+	Ex17_array[] arr1 = new Ex17_array[3];
+	
+	/*Exercise #18 - (1) Complete the previous exercise by creating objects to attach to the array of references. */
+	System.out.println("Ex18_________________");
+	for (Ex17_array ex17 : arr1) {
+		ex17 = new Ex17_array("hello");
+	}
+	
+	/*Exercise #19 - (2) Write a method that takes a vararg String array. Verify that you can pass either a comma-separated 
+	 * list of Strings or a String[] into this method.
+	 */
+	System.out.println("Ex19_________________");
+	varargMethod("string1", "string2", "string3");
+	String[] strArray2 = new String[3];
+	for (int i2=0; i2<3; i2++) {
+		strArray2[i2] = "str" + i2;
+	}
+	varargMethod(strArray2);
+	
+	/*Exercise #21 - (1) Create an enum of the least-valuable six types of paper currency.
+	 *  Loop through the values( ) and print each value and its ordinal( ).
+	 */
+	System.out.println("Ex21_________________");
+	for (currency cur : currency.values()) {
+		System.out.println(("enum#" + cur.ordinal() + ": " +  cur));
+	}
+	
+	/*Exercise #22 - (2) Write a switch statement for the enum in the previous example.
+	 *  For each case, output a description of that particular currency.
+	 */
+	System.out.println("Ex22_________________");
+	for (currency cur : currency.values()) {
+		System.out.print("enum#" + cur.ordinal() + ": " +  cur + " - ");
+		enumPrint(cur);
+		System.out.println();
+	}
+	
+	
 	}
 }
