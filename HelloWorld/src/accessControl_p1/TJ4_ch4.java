@@ -64,7 +64,11 @@ System.out.println("Ex8_________________");
 for (int i=0; i<11; i++) 
 	System.out.println("iteration #" + (i+1)+". Getting connection... Connection name is " + ConnectonManager.getConnection());
 
+<<<<<<< HEAD
 /*Exercise #8 - Create the following file in the access/local directory (presumably in your CLASSPATH):
+=======
+/*Exercise #9 - Create the following file in the access/local directory (presumably in your CLASSPATH):
+>>>>>>> origin/master
  * ...
  * Explain why the compiler generates an error. Would making the Foreign class part of the access.local package change anything?
  */
