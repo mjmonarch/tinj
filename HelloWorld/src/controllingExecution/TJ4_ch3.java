@@ -2,7 +2,6 @@ package controllingExecution;
 
 import java.util.Random;
 
-import mindview.*;
 
 
 public class TJ4_ch3 {
